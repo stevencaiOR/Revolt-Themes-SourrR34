@@ -1,7 +1,7 @@
 {
 	"accent": "hsl(192.778,100%,78.824%)",
 	"background": "#000",
-	"foreground": "hsl(192.778,65%,50%)",
+	"foreground": "hsl(192.778,65%,55%)",
 	"block": "#101010",
 	"message-box": "#101010",
 	"mention": "rgb(147,232,255, .2)",
