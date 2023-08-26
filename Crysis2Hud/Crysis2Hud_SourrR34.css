@@ -3,6 +3,8 @@
 :root{
     --font: Orbitron !important;
     --monospace-font: Consolas !important;
+
+    --status-focus: hsl(210, 75%, 45%);
 }
 
 #app{
@@ -99,6 +101,37 @@ foreignObject[mask="url(#holepunch-top-right)"]{
 }
 foreignObject[mask="url(#holepunch-top-right)"]+circle{
     fill: currentColor;
+}
+/* Foreground Color Replacement */
+html,
+body, /*Pencil Icon, Messages, Etc*/
+.context-menu.Status .header, /*Username in Status */
+.dKFhRZ .container .title, /*Server Name*/
+.klryqE:hover, /*Message Utilities (hover)*/
+.fUHpBU:hover, /*Message Icon in Friends Tab (hover)*/
+.fPzJRX, /*Channel name at top*/
+.fEKFaQ, /*DM name at top*/
+.kXOjYk, /*Username in My Account*/
+.claKep, /*Edit Profile in My Account*/
+.bQqZNf, /*Icons in My Account*/
+.eWYhCn, /*Add Authenticator in My Account*/
+.jbwUqj, /*Log Out in Sessions*/
+.jfwTbF, /*Monospace Font Selected*/
+.jIeDPs, /*Transparency Effects, Seasonal Theme*/
+.bmfWCz, /*JSON icons in Appearance*/
+.iuNJGz, /*Settings Sidebar Headers*/
+.gafLvO, /*User Settings Icon*/
+.eMqgHq, /*Discover Themes in Appearance*/
+._item_1avxi_1[data-alert=true],
+._item_1avxi_1[data-active=true],
+._item_1avxi_1:hover
+{
+    color: var(--accent);
+}
+::selection,
+._alert_1avxi_81/*unread dot*/
+{
+    background: var(--accent);
 }
 /* Miscellaneous */
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._success_sd6wo_81,
