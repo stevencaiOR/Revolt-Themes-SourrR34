@@ -105,6 +105,7 @@ foreignObject[mask="url(#holepunch-top-right)"]+circle{
 /* Foreground Color Replacement */
 html,
 body, /*Pencil Icon, Messages, Etc*/
+._actions_iu4oa_1, /*Filename when enlarge image*/
 .context-menu.Status .header, /*Username in Status */
 .dKFhRZ .container .title, /*Server Name*/
 .klryqE:hover, /*Message Utilities (hover)*/
@@ -129,6 +130,7 @@ body, /*Pencil Icon, Messages, Etc*/
     color: var(--accent);
 }
 ::selection,
+::-webkit-selection,
 ._alert_1avxi_81/*unread dot*/
 {
     background: var(--accent);
