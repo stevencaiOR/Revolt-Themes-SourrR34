@@ -5,48 +5,67 @@
     --monospace-font: Consolas !important;
 
     --status-focus: hsl(210, 75%, 45%);
+    --window-radius: 15px;
+    --window-border-width: 3px;
 }
 
+@media (pointer: fine) {
+/*BEGINNING OF PC ONLY*/
 #app{
     background: url(https://i.imgur.com/iBb7wwY.png) center/cover no-repeat fixed;
 }
-/*Watermark*/
-._version_t7t23_53:before{
-    content: "CRYNET SYSTEMS";
-    color: var(--accent);
-    font-family: var(--font);
-    font-weight: 600;
-}
-/*Decrease Window Size*/
+/* Decrease Window Size + Border Changes */
 ._11Ivv,
 ._settings_t7t23_33:not([data-mobile=true]),
 .Titlebar__TitlebarBase-sc-1ykozpe-0{
     width: 85vw !important;
     position: fixed;
     left: 7.5vw;
-    border: 3px solid var(--accent);
+    border: var(--window-border-width) solid;
+    border-top-left-radius: var(--window-radius);
+    border-top-right-radius: var(--window-radius);
+}
+.hwmymO .actions div{
+    height: calc(var(--titlebar-height) - var(--window-border-width)); /*border-width is 3px, hence account for that*/
+}
+.hwmymO .actions div:hover{
+    background: var(--accent);
+    color: #000;
+}
+.hwmymO .actions div:last-child{
+    border-top-right-radius: calc(var(--window-radius) - var(--window-border-width)); /*border-width is 3px, adjust radius for border-width*/
 }
 ._11Ivv,
 ._settings_t7t23_33:not([data-mobile=true]){
     height: 56vh !important;
     top: 18vh;
+    border-bottom-left-radius: var(--window-radius);
+    border-bottom-right-radius: var(--window-radius);
+}
+.Titlebar__TitlebarBase-sc-1ykozpe-0+._11Ivv,
+.Titlebar__TitlebarBase-sc-1ykozpe-0+div ._settings_t7t23_33:not([data-mobile=true]){
     border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+._11Ivv:first-child .SidebarBase-sc-1dma6vq-0{
+    border-top-left-radius: calc(var(--window-radius) - var(--window-border-width));
+}
+.SidebarBase-sc-1dma6vq-0{
+    border-bottom-left-radius: calc(var(--window-radius) - var(--window-border-width));
+}
+._11Ivv:first-child .jAWgqa,
+._11Ivv:first-child .fEKFaQ{
+    border-top-right-radius: calc(var(--window-radius) - var(--window-border-width));
+}
+.jAWgqa,
+.jBEnry{
+    border-bottom-right-radius: calc(var(--window-radius) - var(--window-border-width));
 }
 .Titlebar__TitlebarBase-sc-1ykozpe-0{
     top: calc(18vh - 29px);
     border-bottom: none;
 }
-/*Item on Hover or Select*/
-._item_1avxi_1[data-active="true"]{
-    border: 2px solid currentColor;
-}
-._item_1avxi_1:not([data-active="true"]):hover{
-    background: rgb(143,232,255,0.15);
-}
-._item_1avxi_1[data-active="true"]:hover{
-    text-shadow: 0 0 5px currentCOlor;
-}
-
 /* Efficient Space Utilization in Settings */
 ._settings_t7t23_33 ._sidebar_t7t23_39{
     max-width: fit-content;
@@ -80,14 +99,56 @@
 }
 /*Avatar Size Increase in Message Area*/
 .MessageBase__MessageInfo-sc-1s9ehlg-1 svg.avatar{
-    --avatar-size: 42px; /*default: 36px*/
-    width: var(--avatar-size);
-    height: var(--avatar-size);
+    --avatar-size: 40px; /*default: 36px*/
+    width: var(--avatar-size, 36px);
+    height: var(--avatar-size, 36px);
 }
 .MessageBase-sc-1s9ehlg-0.gRLOyd{
-    line-height: calc(1.25rem + 6px);
+    line-height: calc(1.2rem + 4px);
 }
+/*Message Box*/
+.jBEnry{
+  border-top-left-radius: 20px;
+  border-top: 3px solid;
+  border-left: 3px solid;
+}
+/* Miscellaneous */
+.Home__Overlay-sc-4bxuxh-0{
+    overflow: scroll;
+}
+.dUCGFk{
+    width: 300px;
+}
+/*END OF PC ONLY*/
+}
+
+/*Watermark*/
+._version_t7t23_53:before{
+    content: "CRYNET SYSTEMS";
+    color: var(--accent);
+    font-family: var(--font);
+    font-weight: 600;
+}
+
+/*Item on Hover or Select*/
+._item_1avxi_1[data-active="true"]{
+    border: 2px solid currentColor;
+}
+._item_1avxi_1:not([data-active="true"]):hover{
+    background: rgb(143,232,255,0.15);
+}
+._item_1avxi_1[data-active="true"]:hover{
+    text-shadow: 0 0 5px currentCOlor;
+}
+
 /* Message Box */
+.bGwznd,
+#message::placeholder{
+    color: var(--accent);
+}
+.MessageBox__Action-sc-jul4fa-2:nth-child(3) .IconButton-sc-166lqkp-0{
+  width: 64px;
+}
 .MessageBox__Action-sc-jul4fa-2:nth-child(3) .IconButton-sc-166lqkp-0 svg{
     display: none;
 }
@@ -135,6 +196,10 @@ body, /*Pencil Icon, Messages, Etc*/
 {
     background: var(--accent);
 }
+/* Message content */
+.iBmOin{
+    color: var(--foreground);
+}
 /* Miscellaneous */
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._success_sd6wo_81,
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._error_sd6wo_78{
@@ -145,10 +210,4 @@ body, /*Pencil Icon, Messages, Etc*/
 }
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._error_sd6wo_78{
     color: var(--error);
-}
-.Home__Overlay-sc-4bxuxh-0{
-    overflow: scroll;
-}
-.dUCGFk{
-    width: 300px;
 }
