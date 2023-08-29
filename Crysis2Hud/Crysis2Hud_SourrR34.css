@@ -13,7 +13,7 @@
     #app{
         background: url(https://i.imgur.com/iBb7wwY.png) center/cover no-repeat fixed;
     }
-    /* Decrease Window Size + Border Changes */
+    /* WINDOW ADJUSTMENTS */
     ._11Ivv,
     ._settings_t7t23_33:not([data-mobile=true]),
     .Titlebar__TitlebarBase-sc-1ykozpe-0{
@@ -41,19 +41,27 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
-    ._11Ivv:first-child .SidebarBase-sc-1dma6vq-0{
-        border-top-left-radius: calc(var(--window-radius) - var(--window-border-width));
-    }
     .SidebarBase-sc-1dma6vq-0{
         border-bottom-left-radius: calc(var(--window-radius) - var(--window-border-width));
-    }
-    ._11Ivv:first-child .jAWgqa,
-    ._11Ivv:first-child .fEKFaQ{
-        border-top-right-radius: calc(var(--window-radius) - var(--window-border-width));
+        border-bottom-right-radius: calc(var(--window-radius) - var(--window-border-width));
     }
     .jAWgqa,
-    .jBEnry{
+    .Channel__ChannelContent-sc-k5myot-1:last-child .jBEnry, /*message box w/o member list*/
+    .hpNYLK,
+    .Channel__ChannelMain-sc-k5myot-0 .dUCGFk{
         border-bottom-right-radius: calc(var(--window-radius) - var(--window-border-width));
+    }
+    /* Web Browser Only*/
+    ._11Ivv:first-child .SidebarBase-sc-1dma6vq-0{
+        border-top-left-radius: calc(var(--window-radius) - var(--window-border-width));
+        border-top-right-radius: calc(var(--window-radius) - var(--window-border-width));
+    }
+    ._11Ivv:first-child .jAWgqa,
+    ._11Ivv:first-child .fEKFaQ,
+    ._11Ivv:first-child .hpNYLK,
+    ._11Ivv:first-child .Header-sc-ujh2d9-0,
+    ._11Ivv:first-child .Channel__ChannelMain-sc-k5myot-0 .dUCGFk{
+        border-top-right-radius: calc(var(--window-radius) - var(--window-border-width));
     }
     /* Titlebar Items */
     .hwmymO .actions div{
@@ -112,7 +120,11 @@
         border-top: 3px solid;
         border-left: 3px solid;
     }
-    /* Miscellaneous */
+    .hpNYLK .Channel__ChannelContent-sc-k5myot-1:not(:last-child) .jBEnry{
+        border-top-right-radius: 20px;
+        border-right: 3px solid;
+    }
+    /* MISCELLANEOUS*/
     .Home__Overlay-sc-4bxuxh-0{
         overflow: scroll;
     }
@@ -121,7 +133,7 @@
     }
 }
 /*-----END OF PC ONLY-----*/
-/*Watermark*/
+/* WATERMARK */
 ._version_t7t23_53:before{
     content: "CRYNET SYSTEMS";
     color: var(--accent);
@@ -131,16 +143,15 @@
 
 /*Item on Hover or Select*/
 ._item_1avxi_1[data-active="true"]{
-    border: 2px solid currentColor;
+    border: 2px solid;
 }
 ._item_1avxi_1:not([data-active="true"]):hover{
     background: rgb(143,232,255,0.15);
 }
 ._item_1avxi_1[data-active="true"]:hover{
-    text-shadow: 0 0 5px currentCOlor;
+    text-shadow: 0 0 5px;
 }
-
-/* Message Box */
+/* MESSAGE BOX */
 .bGwznd,
 #message::placeholder{
     color: var(--accent);
@@ -162,7 +173,7 @@ foreignObject[mask="url(#holepunch-top-right)"]{
 foreignObject[mask="url(#holepunch-top-right)"]+circle{
     fill: currentColor;
 }
-/* Foreground Color Replacement */
+/* FOREGROUND COLOR ADJUSTMENTS */
 html,
 body, /*Pencil Icon, Messages, Etc*/
 ._actions_iu4oa_1, /*Filename when enlarge image*/
@@ -195,11 +206,11 @@ body, /*Pencil Icon, Messages, Etc*/
 {
     background: var(--accent);
 }
-/* Message content */
+/* MESSAGE CONTENT */
 .iBmOin{
     color: var(--foreground);
 }
-/* Miscellaneous */
+/* MISCELLANEOUS */
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._success_sd6wo_81,
 ._friend_sd6wo_33 ._actions_sd6wo_7 ._button_sd6wo_44:hover._error_sd6wo_78{
     background: var(--primary-header);
